@@ -36,14 +36,6 @@ const programs = [
   },
 ];
 
-const ArrowSvg = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="14" cy="14" r="14" fill="#fff"/>
-    <path d="M10.5 14H17.5" stroke="#FC4AAF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M15 11.5L17.5 14L15 16.5" stroke="#FC4AAF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
 const programImages = [
   // Сушка PRO — жиросжигающая Табата + питание
   'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
