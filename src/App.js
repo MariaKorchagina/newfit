@@ -5,40 +5,40 @@ import './App.css';
 
 const programs = [
   {
-    title: '💣Сушка PRO — жиросжигающая Табата + питание',
-    desc: '',
+    title: '💣Сушка PRO\nБыстрый результат - жир уходит, тело в тонусе',
+    desc: 'Идеально для тех, кому нужно сжечь максимум за короткий срок',
     center: true,
   },
   {
-    title: '🧘‍♀️ Сила в теле — пилатес + питание на тонус',
-    desc: '',
+    title: '💪 Сила и Тонус\nУпругая фигура без перегрузки - через пилатес',
+    desc: 'Женственная сила, гибкость и легкость в теле',
     center: false,
   },
   {
-    title: '💪Стальной пресс — техника, глубина, уверенность',
-    desc: '',
+    title: '🧱 Стальной пресс\nГлубокие мышцы + идеальная техника = рельеф',
+    desc: 'Для тех, кто хочет не просто "кубики", а контроль и уверенность',
     center: false,
   },
   {
-    title: '🔗 TRX Баланс — рельеф, осанка, гибкость',
-    desc: '',
+    title: '🔗 TRX Баланс\nРельеф, осанка и сила без гантелей',
+    desc: 'Функциональная тренировка с собственным весом',
     center: false,
   },
   {
-    title: '🏋️‍♂️Супер Качок — зал + полное ведение',
-    desc: '',
+    title: '🏋️‍♂️Суперформа\nЗал, поддержка и прогресс под контролем',
+    desc: 'Для тех, кто хочет результата и не любит тратить время впустую',
     center: false,
   },
   {
-    title: '🍴 Индивидуальный разбор питания',
-    desc: '',
+    title: '🍴 Питание под ключ\nРазбор рациона и точная настройка под тебя',
+    desc: 'Без диет, без запретов - только то, что работает',
     center: false,
   },
 ];
 
 const programImages = [
-  // Сушка PRO — жиросжигающая Табата + питание
-  'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
+  // Сушка PRO — спортивная женщина бежит (вертикальное фото, современный стиль)
+  'https://images.pexels.com/photos/3601094/pexels-photo-3601094.jpeg?auto=compress&w=400&q=80',
   // Стальной пресс — техника, глубина, уверенность
   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
   // Сила в теле — пилатес + питание на тонус
@@ -111,8 +111,11 @@ function App() {
       {/* Бегущая строка before/after */}
       <MarqueeBeforeAfter />
       {/* Крупный центрированный текст */}
-      <div className="big-center-text">
-        Выберите любую<br/>из 8 фитнес-программ под свою цель
+      <div className="big-center-text red-text">
+        Выберите любую фитнес-программу под свою цель
+      </div>
+      <div className="small-black-text" style={{textAlign: 'center', fontSize: '1.05rem', color: '#181818', marginBottom: '32px'}}>
+        Каждая программа — это пошаговый план, который поможет вам достичь своей цели с поддержкой тренера.
       </div>
       {/* Сетка программ с общим фоном */}
       <section className="programs-bg">
@@ -121,20 +124,34 @@ function App() {
             <div
               className={`program-card-gymteam${p.center ? ' program-card-center' : ''}`}
               key={i}
+              style={{
+                backgroundImage: `url(${programImages[i]})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+              }}
             >
-              <div className="program-card-img-wrap">
-                <img src={programImages[i]} alt="program" className="program-card-img-half" />
-                <div className="program-card-img-blur"></div>
-            </div>
               <div className="program-card-content">
-                <div className="program-card-title">{p.title}</div>
-                {p.desc && <div className="program-card-desc">{p.desc}</div>}
-                {(i === 0 || i === 1 || i === 2 || i === 3 || i === 4) ? (
-                  <button className="program-card-btn" onClick={() => { setPopupOpen(true); setPopupIndex(i); }}>Подробнее</button>
-                ) : (
-                  <button className="program-card-btn">Подробнее</button>
-                )}
-            </div>
+                <div className="program-card-title-wrapper">
+                  <div className="program-card-title">
+                    <span>{p.title.split('\n')[0]}</span>
+                    {p.title.split('\n')[1]}
+                  </div>
+                </div>
+                <div className="program-card-bottom">
+                  <button 
+                    className="program-card-btn" 
+                    onClick={() => { setPopupOpen(true); setPopupIndex(i); }}
+                  >
+                    Подробнее
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginLeft: '8px'}}>
+                      <path d="M4.16666 10H15.8333" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M10 4.16667L15.8333 10L10 15.8333" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                  {p.desc && <div className="program-card-desc">{p.desc}</div>}
+                </div>
+              </div>
             </div>
           ))}
         </div>

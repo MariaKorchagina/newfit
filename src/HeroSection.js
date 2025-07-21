@@ -2,7 +2,7 @@ import React from 'react';
 import './HeroSection.css';
 
 const ArrowIcon = () => (
-  <img src="https://gymteam.kinescopecdn.net/img/l/2024/vitrina/arrow.svg" alt="arrow" style={{ width: 44, height: 44, marginLeft: 18 }} />
+  <img src="https://gymteam.kinescopecdn.net/img/l/2024/vitrina/arrow.svg" alt="arrow" style={{ width: 44, height: 44, marginLeft: 10, marginRight: 18 }} />
 );
 
 const Arrow2Button = () => {
@@ -15,7 +15,7 @@ const Arrow2Button = () => {
   return (
     <div className="hero-arrow2-btn-wrap">
       <button className="hero-arrow2-btn" tabIndex={-1} aria-label="Прокрутить вниз" onClick={handleClick}>
-        <img src="https://gymteam.kinescopecdn.net/img/l/2024/vitrina/arrow2.svg" alt="arrow2" />
+        {/* <img src="https://gymteam.kinescopecdn.net/img/l/2024/vitrina/arrow2.svg" alt="arrow2" /> */}
       </button>
     </div>
   );
@@ -43,7 +43,6 @@ const HeroSection = () => {
       <div className="hero-block hero-block--right">
         <img src={process.env.PUBLIC_URL + '/pic/trainer6.jpg'} alt="Тренер" className="hero-trainer-photo" />
       </div>
-      <Arrow2Button />
     </div>
   );
 };

@@ -372,30 +372,84 @@ body, html, #root, .mainpage {
     gap: 18px;
   }
   .program-card-gymteam {
-    max-width: 95vw;
-    min-height: 260px;
+    min-height: 240px;
     border-radius: 20px;
   }
-  .program-card-content {
-    padding: 14px;
-  }
   .program-card-title {
-    font-size: 1.05rem;
-    max-width: 98%;
+    font-size: 1.2rem;
+  }
+  .program-card-title span:first-child {
+    font-size: 1.6rem;
   }
   .program-card-btn {
-    font-size: 1rem;
-    padding: 12px 0;
-    max-width: 180px;
+    min-width: 200px;
   }
   .programs-bg {
     padding: 24px 4px;
     border-radius: 20px;
   }
   .help-block-row {
+    max-width: 98vw;
+    padding: 24px 4px 24px 4px;
     flex-direction: column;
     gap: 18px;
-    padding: 24px 8px;
+    border-radius: 16px;
+    align-items: stretch;
+  }
+  .help-block-left {
+    align-items: flex-start;
+    padding-right: 16px;
+    padding-left: 16px;
+    text-align: left;
+    width: 100%;
+  }
+  .help-block-photo {
+    margin-left: 0;
+    margin-top: 18px;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+  .help-block-img-large {
+    width: 100%;
+    max-width: 420px;
+    height: 340px;
+    min-height: 220px;
+    max-height: 420px;
+    border-radius: 22px;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+  }
+  .help-block-btn-large {
+    width: auto;
+    min-width: 180px;
+    max-width: 320px;
+    text-align: center;
+    display: block;
+    font-size: 1.08rem;
+    padding: 14px 28px;
+    border-radius: 16px;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .help-block-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  .help-block-desc {
+    font-size: 1.01rem;
+    margin-bottom: 18px;
+  }
+  .help-block-badge {
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+  }
+  .help-block-divider {
+    display: none;
   }
   .big-center-text {
     font-size: 1.5rem;
@@ -435,50 +489,76 @@ body, html, #root, .mainpage {
     gap: 10px;
   }
   .program-card-gymteam {
-    max-width: 99vw;
-    min-height: 180px;
+    min-height: 220px;
     border-radius: 12px;
   }
-  .program-card-content {
-    padding: 8px;
-  }
   .program-card-title {
-    font-size: 0.98rem;
-    max-width: 99%;
+    font-size: 1.1rem;
+  }
+  .program-card-title span:first-child {
+    font-size: 1.4rem;
+  }
+  .program-card-desc {
+    font-size: 0.9rem;
   }
   .program-card-btn {
-    font-size: 0.95rem;
-    padding: 10px 0;
-    max-width: 140px;
+    min-width: 180px;
   }
   .programs-bg {
     padding: 10px 2px;
     border-radius: 10px;
   }
   .help-block-row {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 2px;
-  }
-  .big-center-text {
-    font-size: 1.1rem;
-    margin: 18px 0 10px 0;
-  }
-  .popup-content {
     max-width: 100vw;
-    min-height: 20vh;
-    border-radius: 8px;
+    padding: 10px 2px 18px 2px;
+    gap: 10px;
+    border-radius: 10px;
   }
-  .popup-text {
-    padding: 8px 4px 8px 8px;
+  .help-block-left {
+    padding-left: 24px;
+    padding-right: 40px;
+  }
+  .help-block-img-large {
+    width: 100px !important;
+    height: 100px !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin: 0 auto 12px auto !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    max-height: none !important;
+    min-height: 0 !important;
+  }
+  .help-block-title {
+    font-size: 1.05rem;
+  }
+  .help-block-desc {
     font-size: 0.95rem;
+  }
+  .help-block-btn-large {
+    font-size: 0.98rem;
+    padding: 10px 18px;
+    border-radius: 10px;
+    width: auto;
+    min-width: 140px;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .help-block-badge {
+    font-size: 0.85rem;
+    padding: 4px 8px;
   }
   .marquee-ba-img {
     width: 120px !important;
     height: 120px !important;
     border-radius: 8px !important;
   }
-  
 }
 
 @font-face {
@@ -511,7 +591,7 @@ body, html, #root, .mainpage {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 18px;
-  color: #fc4aaf;
+  color: #e53935 !important;
   text-align: center;
 }
 .katya-example p {
@@ -667,113 +747,162 @@ body, html, #root, .mainpage {
   }
 }
 .program-card-gymteam {
+  position: relative;
   min-height: 340px;
   max-width: 320px;
   margin: 0 auto;
   border-radius: 32px;
   box-shadow: 0 8px 32px rgba(252,74,175,0.10), 0 2px 8px rgba(16,24,40,0.04);
-  padding: 0;
-  transition: box-shadow 0.2s, transform 0.2s;
+  padding: 24px 16px;
   overflow: hidden;
-  background: #181d27;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
 }
 
-.program-card-img-wrap {
-  position: relative;
-  width: 100%;
-  height: 50%;
-  min-height: 120px;
-  overflow: hidden;
-  display: block;
+.program-card-gymteam:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px rgba(252,74,175,0.16), 0 4px 16px rgba(16,24,40,0.08);
 }
 
-.program-card-img-half {
+.program-card-gymteam:active {
+  transform: translateY(-2px);
+  transition: all 0.1s ease-in-out;
+}
+
+.program-card-gymteam::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  position: static;
-  opacity: 0.6;
+  background: linear-gradient(180deg, 
+    rgba(24, 24, 24, 0.3) 0%,
+    rgba(24, 24, 24, 0.6) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 32px;
+  transition: background 0.3s ease-in-out;
+  backdrop-filter: blur(2px);
 }
 
-.program-card-img-blur {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 180px;
-  background: linear-gradient(to bottom, rgba(24,29,39,0) 0%, rgba(24,29,39,0.85) 100%);
-  filter: blur(100px);
-  z-index: 2;
-  pointer-events: none;
+.program-card-gymteam:hover::before {
+  background: linear-gradient(180deg, 
+    rgba(24, 24, 24, 0.4) 0%,
+    rgba(24, 24, 24, 0.7) 100%
+  );
 }
 
 .program-card-content {
-  background: #181d27;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
-  min-height: 160px;
-  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 0;
 }
-.program-card-title, .program-card-desc {
-  text-align: center;
+
+.program-card-title-wrapper {
+  margin-top: 20px;
 }
+
+.program-card-bottom {
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
 .program-card-title {
   font-family: 'Bebas Neue', Bebas, Arial, sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 10px;
-  margin-top: 0;
+  margin: 0 auto 4px;
   letter-spacing: -0.5px;
   width: 100%;
   max-width: 90%;
-}
-.program-card-desc {
-  font-size: 0.95rem;
-  color: #fff;
-  margin-bottom: 38px;
-  min-height: 48px;
   text-align: center;
-  width: 100%;
-  max-width: 90%;
+  position: relative;
+  z-index: 2;
+  white-space: pre-line;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
+
+.program-card-title span:first-child {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.program-card-desc {
+  margin: 12px auto 0;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+  max-width: 85%;
+  text-align: center;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+}
+
 .program-card-btn {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 18px;
-  margin-bottom: 20px;
-  padding: 18px 0;
-  width: 100%;
-  max-width: 240px;
-  background: #fc4aaf;
-  color: #fff;
+  margin: 0 auto !important;
+  background: #e53935 !important;
+  color: #fff !important;
   border: none;
-  border-radius: 22px;
-  font-size: 1.18rem;
-  font-weight: 700;
+  border-radius: 32px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(252,74,175,0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(229,57,53,0.2);
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  letter-spacing: 0.2px !important;
+  line-height: 1.2 !important;
+  padding: 16px 32px !important;
+  min-width: 220px;
+  position: relative;
+  overflow: hidden;
 }
+
 .program-card-btn:hover {
-  background: #e03e9a;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(252,74,175,0.18);
+  background: #d32f2f !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(229,57,53,0.3);
 }
-.program-card-btn-arrow {
-  display: flex;
-  align-items: center;
-  margin-left: 8px;
+
+.program-card-btn:active {
+  transform: translateY(0);
+  transition: all 0.1s ease-in-out;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.program-card-gymteam {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
 .programs-bg {
   background: #f3f4f6;
   border-radius: 36px;
@@ -797,7 +926,7 @@ body, html, #root, .mainpage {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: -1px;
-  color: #fc4aaf;
+  color: #e53935 !important;
   margin-bottom: 18px;
 }
 .results-desc {
@@ -887,7 +1016,7 @@ body, html, #root, .mainpage {
 }
 .help-block-btn-large {
   font-size: 1.25rem;
-  padding: 22px 60px;
+  padding: 22px 40px;
   border-radius: 28px;
   box-shadow: 0 4px 16px rgba(252,74,175,0.13);
 }
@@ -915,12 +1044,15 @@ body, html, #root, .mainpage {
   display: block;
 }
 .help-block-img-large {
-  width: auto;
-  height: 90%;
-  max-height: 420px;
+  width: 100%;
+  max-width: 420px;
+  height: 340px;
   min-height: 220px;
-  border-radius: 32px;
-  box-shadow: 0 8px 32px rgba(252,74,175,0.13);
+  max-height: 420px;
+  border-radius: 22px;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
 }
 .help-block-img:hover, .help-block-img-large:hover {
   transform: scale(1.04);
@@ -929,13 +1061,18 @@ body, html, #root, .mainpage {
 @media (max-width: 900px) {
   .help-block-row {
     max-width: 98vw;
-    padding: 32px 10px;
+    padding: 24px 4px 24px 4px;
+    flex-direction: column;
+    gap: 18px;
+    border-radius: 16px;
+    align-items: stretch;
   }
   .help-block-left {
     align-items: flex-start;
-    padding-right: 0;
+    padding-right: 16px;
+    padding-left: 16px;
     text-align: left;
-    padding-left: 0;
+    width: 100%;
   }
   .help-block-photo {
     margin-left: 0;
@@ -943,39 +1080,93 @@ body, html, #root, .mainpage {
     justify-content: center;
     width: 100%;
     height: auto;
+    display: flex;
   }
   .help-block-img-large {
     width: 100%;
+    max-width: 420px;
+    height: 340px;
+    min-height: 220px;
+    max-height: 420px;
+    border-radius: 22px;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+  }
+  .help-block-btn-large {
+    width: auto;
+    min-width: 180px;
     max-width: 320px;
-    height: auto;
-    min-height: 120px;
-    max-height: 320px;
-    border-radius: 18px;
+    text-align: center;
+    display: block;
+    font-size: 1.08rem;
+    padding: 14px 28px;
+    border-radius: 16px;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .help-block-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  .help-block-desc {
+    font-size: 1.01rem;
+    margin-bottom: 18px;
+  }
+  .help-block-badge {
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+  }
+  .help-block-divider {
+    display: none;
   }
 }
 @media (max-width: 600px) {
   .help-block-row {
     max-width: 100vw;
-    padding: 16px 2px;
+    padding: 10px 2px 18px 2px;
+    gap: 10px;
+    border-radius: 10px;
   }
-  .help-block-img-large {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    min-height: 80px;
-    max-height: 180px;
-    border-radius: 12px;
+  .help-block-left {
+    padding-left: 24px;
+    padding-right: 40px;
+  }
+  .help-block-badge {
+    font-size: 0.95rem;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.3;
   }
   .help-block-title {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 1.25;
+    font-weight: 700;
   }
   .help-block-desc {
-    font-size: 0.98rem;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    margin-top: 0;
+    line-height: 1.6;
+    color: #e2e6ee;
+    letter-spacing: 0.01em;
   }
   .help-block-btn-large {
     font-size: 1.05rem;
-    padding: 14px 18px;
-    border-radius: 16px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    width: auto;
+    min-width: 140px;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 18px;
   }
 }
 .program-card-center {
@@ -1037,20 +1228,39 @@ body, html, #root, .mainpage {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 #23242a;
 }
-.popup-content::before {
-  content: '';
-  position: absolute;
-  inset: 0;
+.popup-content::-webkit-scrollbar {
+  width: 8px;
+  background: #23242a;
   border-radius: 32px;
+}
+.popup-content::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 32px;
+}
+.popup-content::-webkit-scrollbar-thumb:hover {
+  background: #bdbdbd;
+}
+.popup-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(24,29,39,0.88);
   z-index: 1;
+  pointer-events: none;
+}
+.popup-content::before {
+  display: none !important;
 }
 .popup-close {
+  z-index: 10 !important;
   position: absolute;
   top: 18px;
   right: 24px;
-  z-index: 2;
   background: none;
   border: none;
   color: #fff;
@@ -1061,7 +1271,7 @@ body, html, #root, .mainpage {
   transition: color 0.2s;
 }
 .popup-close:hover {
-  color: #fc4aaf;
+  color: #e53935 !important;
 }
 .popup-text {
   position: relative;
@@ -1278,7 +1488,7 @@ body, html, #root, .mainpage {
   transition: color 0.2s;
 }
 .fullimg-modal-close:hover {
-  color: #fc4aaf;
+  color: #e53935 !important;
 }
 @media (max-width: 700px) {
   .fullimg-modal-content img {
@@ -1290,4 +1500,24 @@ body, html, #root, .mainpage {
     right: 8px;
     top: 4px;
   }
+}
+
+.big-center-text.red-text {
+  color: #e53935 !important;
+}
+.small-black-text {
+  color: #181818 !important;
+  font-size: 1.05rem;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.program-card-gymteam:first-child {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.program-card-gymteam:first-child .program-card-content {
+  background: transparent !important;
+  opacity: 1 !important;
 }
