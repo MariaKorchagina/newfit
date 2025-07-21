@@ -2,24 +2,11 @@ import React from 'react';
 import './HeroSection.css';
 
 const ArrowIcon = () => (
-  <img src="https://gymteam.kinescopecdn.net/img/l/2024/vitrina/arrow.svg" alt="arrow" style={{ width: 44, height: 44, marginLeft: 10, marginRight: 18 }} />
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
 );
-
-const Arrow2Button = () => {
-  const handleClick = () => {
-    const el = document.querySelector('.big-center-text');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  return (
-    <div className="hero-arrow2-btn-wrap">
-      <button className="hero-arrow2-btn" tabIndex={-1} aria-label="Прокрутить вниз" onClick={handleClick}>
-        {/* <img src="https://gymteam.kinescopecdn.net/img/l/2024/vitrina/arrow2.svg" alt="arrow2" /> */}
-      </button>
-    </div>
-  );
-};
 
 const HeroSection = () => {
   const handleScrollToPrograms = () => {
