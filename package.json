@@ -1,0 +1,18 @@
+{
+  "name": "newfit",
+  "version": "1.0.1",
+  "description": "Fitness website",
+  "homepage": ".",
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd client && npm start",
+    "dev": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MariaKorchagina/newfit.git"
+  },
+  "keywords": ["fitness", "react", "website"],
+  "author": "Maria Korchagina",
+  "license": "MIT"
+} 
