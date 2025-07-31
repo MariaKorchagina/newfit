@@ -1954,25 +1954,8 @@ body, html, #root, .mainpage {
   }
 }
 
-.review-photo-plain, .review-video.review-photo-plain {
-  width: 120px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(16,24,40,0.10);
-  margin-bottom: 18px;
-  margin-top: 0;
-  background: #222;
-  display: block;
-}
-@media (max-width: 700px) {
-  .review-photo-plain, .review-video.review-photo-plain {
-    width: 100px;
-    height: 75px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-}
+
+
 
 .marquee-reviews {
   width: 100%;
@@ -3158,41 +3141,7 @@ body, html, #root, .mainpage {
   }
 }
 
-/* === ПРИНУДИТЕЛЬНЫЕ СТИЛИ ДЛЯ КЛИКАБЕЛЬНЫХ ИЗОБРАЖЕНИЙ === */
-@media (max-width: 768px) {
-  .review-photo, .review-video, .review-photo-plain {
-    cursor: pointer !important;
-    pointer-events: auto !important;
-    user-select: none !important;
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    touch-action: manipulation !important;
-    z-index: 5 !important;
-    position: relative !important;
-    transition: transform 0.2s ease-in-out !important;
-  }
-  
-  .review-photo:hover, .review-video:hover, .review-photo-plain:hover {
-    transform: scale(1.05) !important;
-  }
-  
-  .review-photo:active, .review-video:active, .review-photo-plain:active {
-    transform: scale(0.95) !important;
-  }
-  
-  .marquee-reviews-track .review-photo-plain {
-    cursor: pointer !important;
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
-  }
-  
-  .certificates-marquee-track .certificate-img {
-    cursor: pointer !important;
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
-  }
-}
+
 
 /* === СТИЛИ ДЛЯ ПРОКРУТКИ К КАРТОЧКАМ === */
 @media (max-width: 768px) {
