@@ -145,7 +145,7 @@ const programImages = [
       <HeroSection />
               
       {/* Блок о Лилии */}
-      <section className="katya-example">
+      <section className="block-greetings">
         <h2>Привет, меня зовут Лилия!</h2>
         <p>
           Я — сертифицированный фитнес-тренер, и я здесь, чтобы ты наконец почувствовала: "Я управляю своим телом".<br/><br/>
