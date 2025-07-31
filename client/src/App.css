@@ -1999,9 +1999,36 @@ body, html, #root, .mainpage {
   margin-right: 32px;
   background: #fff;
   box-shadow: 0 2px 12px rgba(16,24,40,0.10);
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.marquee-reviews-track .review-photo-plain:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 4px 20px rgba(16,24,40,0.15) !important;
 }
 .marquee-reviews-track .review-photo-plain:last-child {
   margin-right: 0;
+}
+
+.marquee-reviews-track .review-photo-plain video {
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.marquee-reviews-track .review-photo-plain video:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 4px 20px rgba(16,24,40,0.15) !important;
+}
+
+.marquee-reviews-track .review-photo-plain img {
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.marquee-reviews-track .review-photo-plain img:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 4px 20px rgba(16,24,40,0.15) !important;
 }
 @media (max-width: 700px) {
   .marquee-reviews-track .review-photo-plain {
