@@ -96,7 +96,7 @@ function Program6() {
                 <input type="checkbox" id="consent6" className="checkbox-input" required />
                 <label htmlFor="consent6" className="checkbox-label">
                   Я согласен на обработку моих персональных данных в соответствии с{' '}
-                  <a href="#" className="terms-link">условиями</a>
+                  <a href="/terms" className="terms-link">условиями</a>
                 </label>
               </div>
             </form>
