@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HeroSection from './HeroSection';
 import MarqueeBeforeAfter from './MarqueeBeforeAfter';
+import MarqueeReviews from './MarqueeReviews';
+import { setGlobalImageClickHandler } from './globalState';
 import Program1 from './pages/Program1';
 import Program2 from './pages/Program2';
 import Program3 from './pages/Program3';
@@ -10,48 +12,21 @@ import Program5 from './pages/Program5';
 import Program6 from './pages/Program6';
 import './App.css';
 
-function MarqueeReviews({ onImageClick }) {
-  const reviews = [
-    { src: '/pic/comment1.jpeg', type: 'image' },
-    { src: '/pic/comment2.jpeg', type: 'image' },
-    { src: '/pic/comment3.jpeg', type: 'image' },
-    { src: '/pic/comment4.jpeg', type: 'image' },
-    { src: '/pic/comment5.mp4', type: 'video' },
-  ];
 
-  return (
-    <div className="marquee-reviews">
-      <div className="marquee-reviews-track">
-        {[...reviews, ...reviews].map((review, index) => (
-          <div key={index} className="review-photo-plain">
-            {review.type === 'video' ? (
-              <video
-                src={process.env.PUBLIC_URL + review.src}
-                onClick={() => onImageClick(process.env.PUBLIC_URL + review.src)}
-                style={{cursor: 'pointer'}}
-                controls
-              />
-            ) : (
-              <img
-                src={process.env.PUBLIC_URL + review.src}
-                alt={`Отзыв ${(index % reviews.length) + 1}`}
-                onClick={() => onImageClick(process.env.PUBLIC_URL + review.src)}
-                style={{cursor: 'pointer'}}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function App() {
   const [fullImg, setFullImg] = useState(null);
 
-  const handleImageClick = (src) => {
+  const handleImageClick = useCallback((src) => {
     setFullImg(src);
-  };
+  }, []);
+
+  // Устанавливаем глобальный обработчик при монтировании компонента
+  React.useEffect(() => {
+    setGlobalImageClickHandler(handleImageClick);
+  }, [handleImageClick]);
+
+
 
   const handleCloseFullImg = () => {
     setFullImg(null);
@@ -59,31 +34,31 @@ function App() {
 
   const forWhomItems = [
     {
-      emoji: "⏰",
+      emoji: "",
       text: "Если нет времени на долгие тренировки и постоянные походы в зал"
     },
     {
-      emoji: "💪",
+      emoji: "",
       text: "Если ты не можешь собраться с силами и начать заниматься"
     },
     {
-      emoji: "❌",
+      emoji: "",
       text: "Если раньше начинала, но бросала из-за отсутствия мотивации"
     },
     {
-      emoji: "😰",
+      emoji: "",
       text: "Если чувствуешь усталость, тревожность и стресс и не знаешь, как это изменить"
     },
     {
-      emoji: "🤔",
+      emoji: "",
       text: "Если хочешь заниматься, но не знаешь, с чего начать и как правильно тренироваться"
     },
     {
-      emoji: "❤️",
+      emoji: "",
       text: "Если нужна поддержка и простой план, который реально впишется в твою жизнь"
     },
     {
-      emoji: "🏠",
+      emoji: "",
       text: "Если хочешь заниматься дома или в зале, но тебе нужен гибкий и понятный подход"
     }
   ];
@@ -110,8 +85,8 @@ const programs = [
     center: false,
   },
   {
-    title: '🏋️‍♂️Суперформа\nЗал, поддержка и прогресс под контролем',
-    desc: 'Для тех, кто хочет результата и не любит тратить время впустую',
+    title: '🤰 Восстановление после родов\nБодримся с диастазом, отёками, тело возвращается в комфорт и силу.',
+    desc: 'Для тех, кто готов вернуть себе силу, тонус и уверенность.',
     center: false,
   },
   {
@@ -124,10 +99,10 @@ const programs = [
 const programImages = [
   // Сушка PRO — спортивная женщина бежит (вертикальное фото, современный стиль)
   'https://images.pexels.com/photos/3601094/pexels-photo-3601094.jpeg?auto=compress&w=400&q=80',
-  // Стальной пресс — техника, глубина, уверенность
-  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-  // Сила в теле — пилатес + питание на тонус
+  // Сила и Тонус — пилатес + питание на тонус
   'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=400&q=80',
+  // Стальной пресс — техника, глубина, уверенность
+  process.env.PUBLIC_URL + '/pic/press.png',
   // TRX Баланс — рельеф, осанка, гибкость (TRX photo, Pexels)
   'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&w=400&q=80',
   // Супер Качок — зал + полное ведение
@@ -155,10 +130,10 @@ const programImages = [
           Каждая программа подбирается под твои цели, возможности и ритм жизни.<br/><br/>
           <b>Какие задачи возможно решить вместе со мной:</b><br/>
           🏃🏻‍♂️ Похудеть<br/>
-          🏋🏻‍♀️ Набрать мышечную массу и развить силу<br/>
+          🏋🏻‍♀️ Получить рельеф и развить силу<br/>
           💪 Укрепить сердечно-сосудистую систему<br/>
-          🥑 Скорректировать питания и образа жизни<br/>
-          🤕 Восстановиться после травм (в сотрудничестве с физиотерапевтами)
+          🥑 Скорректировать питание и образ жизни навсегда<br/>
+          🤰 Восстановиться после родов: похудеть, приобрести легкость и гибкость в теле
         </p>
       </section>
               
@@ -186,13 +161,15 @@ const programImages = [
       <div className="small-black-text" style={{textAlign: 'center', fontSize: '1.05rem', color: '#181818', marginBottom: '32px'}}>
         Каждая программа — это пошаговый план, который поможет вам достичь своей цели с поддержкой тренера.
       </div>
+
+
               
       {/* Сетка программ с общим фоном */}
       <section className="programs-bg">
         <div className="programs-grid">
           {programs.map((p, i) => (
             <div
-              className={`program-card-gymteam${p.center ? ' program-card-center' : ''}`}
+              className={`program-card-liliya${p.center ? ' program-card-center' : ''}`}
               key={i}
               style={{
                 backgroundImage: `url(${programImages[i]})`,
@@ -227,13 +204,47 @@ const programImages = [
         </div>
       </section>
 
+      {/* Блок "Как проходят тренировки" */}
+      <div className="training-process-block">
+        <h2 className="training-process-title">Как проходят тренировки</h2>
+        <div className="training-process-content">
+          <div className="training-process-left">
+            <div className="training-process-text">
+              <p>Все тренировки — онлайн, но это не запись и не групповое занятие.</p>
+              <p>Это формат, где только ты и тренер.</p>
+              <p>1 на 1. Без отвлечений. Только твой результат.</p>
+              <br />
+              <p>Такого на рынке практически нет.</p>
+              <p>Я полностью с тобой на каждом занятии:</p>
+              <p>✅ Я всё вижу</p>
+              <p>✅ Я контролирую технику</p>
+              <p>✅ Я подбираю упражнения именно под тебя</p>
+              <p>✅ Я знаю, когда ты можешь больше — и мягко веду туда</p>
+              <br />
+              <p>Я много училась и прошла это сама —</p>
+              <p>на своём примере знаю, как восстановить форму быстро и эффективно.</p>
+              <p>И главное — как полюбить спорт без напряга, без стресса, каждый день.</p>
+            </div>
+          </div>
+          <div className="training-process-right">
+            <div className="minimal-inventory-image">
+              <img src={process.env.PUBLIC_URL + '/pic/list.png'} alt="Список инвентаря" className="inventory-list-image" />
+              <div className="inventory-title">МИНИМАЛЬНЫЙ ИНВЕНТАРЬ</div>
+              <div className="inventory-description">
+                Все занятия можно проводить дома, без сложного инвентаря. На курсе даны список и рекомендации по покупке или бесплатные домашние аналоги.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Бегущая строка отзывов */}
       <section className="reviews-section">
         <div className="reviews-header">
           <h2 className="reviews-title">Отзывы участниц</h2>
           <div className="reviews-subtitle">Реальные истории, результаты и эмоции после программ</div>
         </div>
-        <MarqueeReviews onImageClick={handleImageClick} />
+        <MarqueeReviews />
       </section>
 
       {/* Блок с вопросом, кнопкой и фото */}
@@ -253,7 +264,10 @@ const programImages = [
       </section>
 
       {fullImg && (
-        <div className="fullimg-modal" onClick={handleCloseFullImg}>
+        <div 
+          className="fullimg-modal"
+          onClick={handleCloseFullImg}
+        >
           <div className="fullimg-modal-content" onClick={e => e.stopPropagation()}>
             <img src={fullImg} alt="Отзыв" />
             <button className="fullimg-modal-close" onClick={handleCloseFullImg}>&times;</button>

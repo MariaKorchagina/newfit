@@ -2,9 +2,9 @@ import React from 'react';
 
 // Список файлов-изображений (jpg, png) из папки
 const images = [
-  ...Array.from({ length: 60 }, (_, i) => `${process.env.PUBLIC_URL}/Все онлайн-тренировки Екатерины Усмановой в GymTeam_files/${i+1}.jpg`),
-  ...Array.from({ length: 6 }, (_, i) => `${process.env.PUBLIC_URL}/Все онлайн-тренировки Екатерины Усмановой в GymTeam_files/program_0${i+1}.png`),
-  // Добавьте сюда другие изображения, если нужно
+  process.env.PUBLIC_URL + '/pic/beforeafter8.jpeg',
+  process.env.PUBLIC_URL + '/pic/beforeafter9.jpeg',
+  process.env.PUBLIC_URL + '/pic/beforeafter10.jpeg',
 ];
 
 const Gallery = () => (

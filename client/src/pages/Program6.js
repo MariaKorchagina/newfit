@@ -62,11 +62,44 @@ function Program6() {
           
           <p>Хватит гадать, из-за чего вес стоит. Просто посмотри на свой рацион глазами специалиста — и многое станет очевидным.</p>
           
-          <div className="program-price">
-            <h3>💰 Цена: 40₪ / 107 €</h3>
-            <a href="https://wa.me/972549961795" target="_blank" rel="noopener noreferrer" className="program-cta-button">
-              Записаться на консультацию
-            </a>
+
+
+          {/* Форма покупки курса */}
+          <div className="course-purchase-form">
+            <div className="price-display">
+              <span className="price-amount">40₪ / 107€</span>
+              <span className="price-period">консультация</span>
+            </div>
+            
+            <form className="purchase-form" onSubmit={(e) => {
+              e.preventDefault();
+              window.open('https://wa.me/972549961795', '_blank');
+            }}>
+              <input 
+                type="email" 
+                placeholder="Введите ваш эл. адрес*" 
+                className="form-input"
+                required
+              />
+              <input 
+                type="tel" 
+                placeholder="Введите ваш телефон *" 
+                className="form-input"
+                required
+              />
+              
+              <button type="submit" className="buy-course-btn">
+                Купить курс
+              </button>
+              
+              <div className="consent-checkbox">
+                <input type="checkbox" id="consent6" className="checkbox-input" required />
+                <label htmlFor="consent6" className="checkbox-label">
+                  Я согласен на обработку моих персональных данных в соответствии с{' '}
+                  <a href="#" className="terms-link">условиями</a>
+                </label>
+              </div>
+            </form>
           </div>
         </div>
       </div>

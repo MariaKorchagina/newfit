@@ -32,11 +32,44 @@ function Program4() {
           
           <p>TRX — лучший инструмент, если хочешь тело как скульптура, без залов и травм.</p>
           
-          <div className="program-price">
-            <h3>💰 Цена: 800₪ → 560₪ (скидка 30%)</h3>
-            <a href="https://wa.me/972549961795" target="_blank" rel="noopener noreferrer" className="program-cta-button">
-              Записаться на программу
-            </a>
+
+
+          {/* Форма покупки курса */}
+          <div className="course-purchase-form">
+            <div className="price-display">
+              <span className="price-amount">800₪ → 560₪</span>
+              <span className="price-period">(скидка 30%)</span>
+            </div>
+            
+            <form className="purchase-form" onSubmit={(e) => {
+              e.preventDefault();
+              window.open('https://wa.me/972549961795', '_blank');
+            }}>
+              <input 
+                type="email" 
+                placeholder="Введите ваш эл. адрес*" 
+                className="form-input"
+                required
+              />
+              <input 
+                type="tel" 
+                placeholder="Введите ваш телефон *" 
+                className="form-input"
+                required
+              />
+              
+              <button type="submit" className="buy-course-btn">
+                Купить курс
+              </button>
+              
+              <div className="consent-checkbox">
+                <input type="checkbox" id="consent4" className="checkbox-input" required />
+                <label htmlFor="consent4" className="checkbox-label">
+                  Я согласен на обработку моих персональных данных в соответствии с{' '}
+                  <a href="#" className="terms-link">условиями</a>
+                </label>
+              </div>
+            </form>
           </div>
         </div>
       </div>
