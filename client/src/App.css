@@ -4102,20 +4102,22 @@ h2 {
   color: #181818;
   font-size: 1rem;
   line-height: 1.6;
-  margin: 0 0 12px 0;
-  padding-left: 24px;
+  margin: 0 0 8px 0;
+  padding-left: 20px;
   position: relative;
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease 0.1s;
-  text-indent: -24px;
+  text-indent: -20px;
 }
 
 .faq-answer li:before {
   content: "•";
   color: #e53935;
   font-weight: bold;
-  margin-right: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .faq-item.active .faq-answer li {
