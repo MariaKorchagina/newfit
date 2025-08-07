@@ -1325,13 +1325,12 @@ h2 {
 }
 
 .program-card-liliya:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 48px rgba(252,74,175,0.16), 0 4px 16px rgba(16,24,40,0.08);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .program-card-liliya:active {
-  transform: translateY(-2px);
-  transition: all 0.1s ease-in-out;
+  transform: translateY(-4px) scale(1.01);
 }
 
 .program-card-liliya::before {
@@ -4211,6 +4210,125 @@ h2 {
   .faq-answer p {
     font-size: 0.9rem;
   }
+}
+
+
+
+
+
+
+
+/* Кнопка "Наверх" */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e53935, #ff6b6b);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(229, 57, 53, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(229, 57, 53, 0.4);
+  background: linear-gradient(135deg, #ff6b6b, #e53935);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Анимации для FAQ */
+.faq-item {
+  animation: slideInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.faq-item:nth-child(1) { animation-delay: 0.1s; }
+.faq-item:nth-child(2) { animation-delay: 0.2s; }
+.faq-item:nth-child(3) { animation-delay: 0.3s; }
+.faq-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Улучшенные анимации для кнопок */
+.program-card-btn,
+.help-block-btn,
+.help-block-btn-large {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.program-card-btn::before,
+.help-block-btn::before,
+.help-block-btn-large::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.program-card-btn:hover::before,
+.help-block-btn:hover::before,
+.help-block-btn-large:hover::before {
+  left: 100%;
+}
+
+/* Пульсация для CTA кнопок */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.cta-btn {
+  animation: pulse 2s infinite;
+}
+
+/* Улучшенные тени для карточек */
+.program-card-liliya::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(229, 57, 53, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.program-card-liliya:hover::after {
+  opacity: 1;
 }
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HeroSection from './HeroSection';
 import MarqueeBeforeAfter from './MarqueeBeforeAfter';
@@ -17,6 +17,7 @@ import './App.css';
 function App() {
   const [fullImg, setFullImg] = useState(null);
   const [openFaqItem, setOpenFaqItem] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const toggleFaqItem = (id) => {
     setOpenFaqItem(openFaqItem === id ? null : id);
@@ -30,6 +31,16 @@ function App() {
   React.useEffect(() => {
     setGlobalImageClickHandler(handleImageClick);
   }, [handleImageClick]);
+
+  // Отслеживание скролла для кнопки "Наверх"
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
 
@@ -342,6 +353,43 @@ const programImages = [
           </div>
         </div>
       </section>
+
+      {/* Кнопка "Наверх" */}
+      {showScrollTop && (
+        <button 
+          className="scroll-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{
+            position: 'fixed',
+            bottom: '30px',
+            right: '30px',
+            width: '50px',
+            height: '50px',
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #e53935, #ff6b6b)',
+            border: 'none',
+            color: 'white',
+            fontSize: '20px',
+            cursor: 'pointer',
+            boxShadow: '0 4px 20px rgba(229, 57, 53, 0.3)',
+            transition: 'all 0.3s ease',
+            zIndex: 1000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'scale(1.1)';
+            e.target.style.boxShadow = '0 6px 25px rgba(229, 57, 53, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = '0 4px 20px rgba(229, 57, 53, 0.3)';
+          }}
+        >
+          ↑
+        </button>
+      )}
 
       {/* Футер */}
       <footer className="main-footer">
