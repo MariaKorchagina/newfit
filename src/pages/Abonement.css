@@ -1,0 +1,331 @@
+.abonement {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.abonement-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.abonement-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.abonement-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+}
+
+.abonement-header p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.abonement-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.price-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.price-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.price-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.price-amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+.price-currency {
+  font-size: 24px;
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+.price-alternative {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+.price-details {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.price-original {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.original-amount {
+  font-size: 20px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.original-currency {
+  font-size: 16px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-bonus {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.abonement-features {
+  margin-bottom: 30px;
+}
+
+.abonement-features h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.abonement-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.abonement-features li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.buy-button {
+  width: 100%;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 18px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.buy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.abonement-info h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+}
+
+.abonement-info p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.stats {
+  margin-bottom: 40px;
+}
+
+.stat-item {
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.feature h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.faq-section {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.faq-item p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.faq-item strong {
+  color: #333;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .abonement-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .abonement-header h1 {
+    font-size: 32px;
+  }
+
+  .abonement-header p {
+    font-size: 18px;
+  }
+
+  .price-card {
+    padding: 30px;
+  }
+
+  .price-amount {
+    font-size: 36px;
+  }
+
+  .abonement-info h2 {
+    font-size: 28px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-section {
+    padding: 30px;
+  }
+
+  .faq-section h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .abonement-container {
+    padding: 40px 20px;
+  }
+
+  .abonement-header h1 {
+    font-size: 28px;
+  }
+
+  .price-card {
+    padding: 25px;
+  }
+
+  .abonement-info h2 {
+    font-size: 24px;
+  }
+
+  .faq-section {
+    padding: 25px;
+  }
+} 
